@@ -1,8 +1,10 @@
 # nf-configs
 
-Welcome to the central config repository of my little pipeline ecosystem. I am developing workflows vor various applications in food safety monitoring, including taxonomic profiling of food stuff, assembly, annotation and profiling of bacterial isolates as well as the characterization of signatures of genetic modification in plant materials (seeds and processed products). And possibly more to come over the next months.
+Welcome to the central config repository of my little pipeline ecosystem. I am developing workflows for various applications in food safety monitoring, including taxonomic profiling of food stuff, assembly, annotation and profiling of bacterial isolates as well as the characterization of signatures of genetic modification in plant materials (seeds and processed products). And possibly more to come over the next months.
 
 All pipelines are developed in [Nextflow](https://nextflow.io/), using a common [template](https://github.com/marchoeppner/nf-template) with a focus on portability, high standard of implementation, ease of use and version control. I have previously developed within the [nf-core](https://github.com/nf-core) project and most of the coding framework used here is based on conventions originally developed by nf-core for the Nextflow community. As such, nf-core developers will find it immediately familiar and users will appreciate the overall robustness.
+
+We provide a detailed documentation with each pipeline (see below) as well as a generel [setup guide](doc/installation.md) to prepare your system for running them. We have also collected [answers](doc/faq.md) to some common questions
 
 The config files hosted here can be jointly used across the following pipelines:
 
