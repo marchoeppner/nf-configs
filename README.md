@@ -4,7 +4,9 @@ Welcome to the central config repository of my little pipeline ecosystem. I am d
 
 All pipelines are developed in [Nextflow](https://nextflow.io/), using a common [template](https://github.com/marchoeppner/nf-template) with a focus on portability, high standard of implementation, ease of use and version control. I have previously developed within the [nf-core](https://github.com/nf-core) project and most of the coding framework used here is based on conventions originally developed by nf-core for the Nextflow community. As such, nf-core developers will find it immediately familiar and users will appreciate the overall robustness.
 
-We provide a detailed documentation with each pipeline (see below) as well as a generel [setup guide](doc/installation.md) to prepare your system for running them. We have also collected [answers](doc/faq.md) to some common questions
+I provide a detailed documentation with each pipeline (see below) as well as a general [setup guide](doc/installation.md) to prepare your system for running them. We have also collected [answers](doc/faq.md) to some common questions
+
+**Finally, here are [instructions](doc/config.md) on how to actually set up your config file and contribute it.**
 
 The config files hosted here can be jointly used across the following pipelines:
 
@@ -14,7 +16,7 @@ The config files hosted here can be jointly used across the following pipelines:
 
 ## Eutaxpro
 
-[Eutaxpro](https://github.com/marchoeppner/eutaxpro) performs taxonomic profiling of mitochondrial amplicon data to detect eukaryote species from mixed samples. The main application is in detecting food fraud, such as mis-labelled ingredients or use of endangered animals in (processed) foods. 
+[Eutaxpro](https://github.com/marchoeppner/eutaxpro) performs taxonomic profiling of mitochondrial amplicon data to detect and quantify eukaryote species from mixed samples. The main application is in detecting food fraud, such as mis-labelled ingredients or use of endangered animals in (processed) foods. 
 
 ## GMO-check
 
