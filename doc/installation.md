@@ -22,7 +22,7 @@ On Linux, you have access to basically all supported software provisioning frame
 
 To install Singularity on your system, the easiest option is:
 
-On a RHEL derivative, version 9(rpm).
+On a RHEL derivative, version 9 (rpm).
 ```bash
 wget https://github.com/sylabs/singularity/releases/download/v4.1.2/singularity-ce-4.1.2-1.el9.x86_64.rpm
 sudo dnf -y install ./singularity-ce-4.1.2-1.el9.x86_64.rpm
@@ -48,7 +48,7 @@ sudo alternatives --config java
 
 On Ubuntu, version 22.04
 ```bash
-sudo apt install openjdk-21-jdk
+sudo apt install openjdk-11-jdk
 sudo update-alternatives --config java
 ```
 
@@ -69,6 +69,7 @@ chmod +x nextflow
 And you could also make sure that $HOME/bin is in $PATH by adding the directory to your bash profile:
 ```bash
 echo "export PATH=$PATH:$HOME/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ```
 
 ## OSX
@@ -79,17 +80,17 @@ The following guide was tested on OSX 14 (Sonoma) with an Intel-based Macbook Pr
 
 On Mac, we recommend you install Docker instead of Conda or any of the other container frameworks; its the simplest approach with the least amount of incompatibilies.
 
-Luckily, Docker has a detailed installation guide [here](https://docs.docker.com/desktop/install/mac-install/).
+Docker (Docker Desktop) has a detailed installation guide [here](https://docs.docker.com/desktop/install/mac-install/).
 
 ### Installing JRE
 
-Nextflow requires The Java JRE (>= 11, <= 21). To be able to specifically install that, we first need SDKMAN
+Nextflow requires the Java JRE (>= 11, <= 21). To be able to specifically install that, we first need SDKMAN
 
 ```bash
 curl -s "https://get.sdkman.io" | bash
 ```
 
-Simply follow the instructions on the screen and then source your bash profile to make the changes that immediate effect:
+Simply follow the instructions on the screen and then source your bash profile to make the changes take immediate effect:
 
 ```bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -107,7 +108,7 @@ You can confirm that you have installed the correct version as follows:
 java -version
 ```
 
-### Installing Java
+### Installing Nextflow
 
 You can follow the instructions on the official Nextflow guide [here](https://www.nextflow.io/docs/latest/getstarted.html#installation).
 
@@ -127,6 +128,20 @@ source $HOME/.bash_profile
 
 ## Windows 11
 
-Coming soon.
+With the introduction of [windows subsystems](https://learn.microsoft.com/en-us/windows/wsl/install) (WSL), it is now technically possible to run Linux directly within the Windows 11 powershell. Since this is ultimately a type of virtualization, it comes with drawbacks such as the fact that the Linux environment will only get parts of the total systems resources. We also found some processes to simply fail under WSL for no obvious reasons. If you are nevertheless set on trying to get our pipelines to run under Windows, the following steps are necessary:
 
+- Make sure your CPU/main board support virtualization
+- Enable virtualization in your systems BIOS (refer to manufacturers instructions)
+- Get the latest version of Windows 11
+- [Install](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4) the latest version of the Windows 11 Powershell (version 7.4 at the time of writing)
+- Start the Windows Powershell
 
+Next, you have to set up your virtual linux environment:
+
+```bash
+wsl --install
+```
+
+If you have previously enabled virtualization in your computers bios, this should run through fine and create a basic Ubuntu installation. You will be asked to provide a user name and password - make sure to write these down. You will then be dropped into the bash shell of a fresh Ubuntu 22.04 system. 
+
+From here on, simply refer to the instructions for Linux [above](#linux).

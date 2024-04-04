@@ -2,7 +2,7 @@
 
 All our pipelines allow you to run with basic build-in execution profiles and expose relevant options from the command line to dial in your system specs. This is described in each respective pipeline documentation. 
 
-However, we strongly recommmend that you add your own site-specific config file to this repository to avoid having to set these options from the command line each time your run a pipeline. Moreover, the built-in profiles are only applicable to single-computer setups. If you run on a compute cluster, or possibly the cloud, you will need to provide additional options to the pipeline for it to translate properly to your setting. 
+However, we strongly recommend that you add your own site-specific config file to this repository to avoid having to set these options from the command line each time your run a pipeline. Moreover, the built-in profiles are only applicable to single-computer setups. If you run on a compute cluster, or possibly the cloud, you will need to provide additional options to the pipeline for it to translate properly to your setting. 
 
 ## Contributing your profile
 
@@ -12,7 +12,7 @@ Before we look at the specific options you can put in your site-specific config 
 
 If you are (very) comfortable with git, you are welcome to fork this repository and add your own profile, followed by a pull request against our main branch. You will have to :
 
-- create config file under `conf/` with a name of your choice (preferably short!)
+- create your config file under `conf/` with a name of your choice (preferably short!)
 - add this new config file to the central lookup file [custom.config](../custom.config) with a short name matching the name of the config file
 - Commit your changes to your personal fork
 - Create a pull request from your updated fork to our main branch
@@ -23,6 +23,7 @@ If you are not (very) comfortable with git, you are welcome to create an issue o
 
 - name of the profile
 - number of compute cores, ram and (optionally) allowed walltime
+- description of your compute environment (single machine, cluster, cloud) and resource manager, if any
 - choice of software provisioning framework and any necessary options
 
 See below for all the possible options that can be set. 
@@ -60,7 +61,7 @@ Note that this config file specifies four instruction blocks - the first three a
 
 ## params
 
-Here you can specify the limits of your compute enfironment and the base directory for the local pipeline references. The compute limits apply to the configuration of individual nodes (max_cpus, max_memory) and the whole cluster (max_time, i.e. maximum walltime a job can use), respectively. The reference_base option should be user-writable and live on a shared file system so all compute systems can access it. 
+Here you can specify the limits of your compute enfironment and the base directory for the local pipeline references. The compute limits apply to the configuration of individual nodes (max_cpus, max_memory) and the whole cluster (max_time, i.e. maximum walltime a job can use), respectively. The reference_base option should be user-writable and, if applicable, live on a shared file system so all compute systems can access it. 
 
 ## executor
 
@@ -84,7 +85,7 @@ or
 ```
 conda {
     enabled = true
-    cacheDIr = /work/conda_cache
+    cacheDir = /work/conda_cache
 }
 ````
 and so on...
