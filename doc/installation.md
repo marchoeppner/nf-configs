@@ -52,7 +52,7 @@ sudo apt install openjdk-11-jdk
 sudo update-alternatives --config java
 ```
 
-Use the second command to set JRE21 as your sytems default. 
+Use the second command to set the appropriate version of JRE as your default. 
 
 ### Installing Nextflow
 
@@ -128,7 +128,7 @@ source $HOME/.bash_profile
 
 ## Windows 11
 
-With the introduction of [windows subsystems](https://learn.microsoft.com/en-us/windows/wsl/install) (WSL), it is now technically possible to run Linux directly within the Windows 11 powershell. Since this is ultimately a type of virtualization, it comes with drawbacks such as the fact that the Linux environment will only get parts of the total systems resources. We also found some processes to simply fail under WSL for no obvious reasons. If you are nevertheless set on trying to get our pipelines to run under Windows, the following steps are necessary:
+With the introduction of [windows subsystems for Linux](https://learn.microsoft.com/en-us/windows/wsl/install) (WSL), it is now technically possible to run Linux "directly" within the Windows 11 powershell. Since this is ultimately a type of virtualization, it comes with drawbacks such as the fact that the Linux environment will only get parts of the total systems resources. We also found some processes to simply fail under WSL for no obvious reasons. If you are nevertheless set on trying to get our pipelines to run under Windows, the following steps are necessary:
 
 - Make sure your CPU/main board support virtualization
 - Enable virtualization in your systems BIOS (refer to manufacturers instructions)

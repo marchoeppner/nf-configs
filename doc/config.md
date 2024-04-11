@@ -34,10 +34,10 @@ The amount of data needed is fairly minimal - see the example below for a simple
 
 ```
 params {
-	max_cpus = 40
-	max_memory = 250
-    max_time = 120.h
-    reference_base = /work/references
+  max_cpus = 40
+  max_memory = 250.GB
+  max_time = 120.h
+  reference_base = /work/references
 }
 
 executor {
@@ -51,13 +51,12 @@ process {
 
 singularity {
   enabled = true
-  runOptions = "-B /work -B /scratch"
   cacheDir = "/work/singularity_cache"
 }
 
 ```
 
-Note that this config file specifies four instruction blocks - the first three are mandatory, the fourth configures the container engine and related settings. 
+Note that this config file specifies four instruction blocks - the first three are mandatory, the fourth configures the container engine and related settings, so will depend on your software provider of choice. 
 
 ## params
 
