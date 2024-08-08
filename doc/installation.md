@@ -18,23 +18,21 @@ We are testing our pipelines on Alma Linux 9.4, but the basic principle should b
 
 ### Software provisioning
 
-On Linux, you have access to basically all supported software provisioning frameworks also supported by Nextflow - including Conda and several container frameworks. These all have their pros and cons, but to keep things simple, we recommend you use Singularity. Singularity is a Docker-compatible container engine, is completely free and also happens to have a dedicated repository for all the otherwise Docker-native Bioconda containers we use in this pipeline (i.e. quick start up without need for conversion of container formats).
+On Linux, you have access to basically all supported software provisioning frameworks also supported by Nextflow - including Conda and several container frameworks. These all have their pros and cons, but to keep things simple, we recommend you use Apptainer. Apptainer is a Docker-compatible container engine, is completely free and also happens to have a dedicated repository for all the otherwise Docker-native Bioconda containers we use in this pipeline (i.e. quick start up without need for conversion of container formats).
 
-To install Singularity on your system, the easiest option is:
+To install Apptainer on your system, the easiest option is:
 
 On a RHEL derivative, version 9 (rpm).
 ```bash
-wget https://github.com/sylabs/singularity/releases/download/v4.1.2/singularity-ce-4.1.2-1.el9.x86_64.rpm
-sudo dnf -y install ./singularity-ce-4.1.2-1.el9.x86_64.rpm
+sudo dnf -y install apptainer
 ```
 
 On Ubuntu, version 22.04 (deb)
 ```bash
-wget https://github.com/sylabs/singularity/releases/download/v4.1.2/singularity-ce_4.1.2-jammy_amd64.deb
-sudo dpkg -i singularity-ce_4.1.2-jammy_amd64.deb
+sudo apt-get install apptainer
 ```
 
-If you running different/older/newer releases or otherwise need more information on installing Singularity, please check the official [documentation](https://docs.sylabs.io/guides/3.11/admin-guide/installation.html). 
+If you running different/older/newer releases or otherwise need more information on installing Apptainer, please check the official [documentation](https://apptainer.org/docs/admin/latest/installation.html). 
 
 ### Installing JRE
 
@@ -62,8 +60,8 @@ A simple approach would be:
 ```bash
 mkdir -p $HOME/bin
 cd $HOME/bin
-wget https://github.com/nextflow-io/nextflow/releases/download/v23.10.1/nextflow-23.10.1-all
-mv nextflow-23.10.1-all nextflow
+wget https://github.com/nextflow-io/nextflow/releases/download/v24.04.4/nextflow-24.04.4-all
+mv nextflow-24.04.4-all nextflow
 chmod +x nextflow
 ```
 And you could also make sure that $HOME/bin is in $PATH by adding the directory to your bash profile:
@@ -116,8 +114,8 @@ A simple approach would be:
 ```bash
 mkdir -p $HOME/bin
 cd $HOME/bin
-curl -O https://github.com/nextflow-io/nextflow/releases/download/v23.10.1/nextflow-23.10.1-all
-mv nextflow-23.10.1-all nextflow
+curl -O https://github.com/nextflow-io/nextflow/releases/download/v24.04.4/nextflow-24.04.4-all
+mv nextflow-24.04.4-all nextflow
 chmod +x nextflow
 ```
 And you could also make sure that $HOME/bin is in $PATH by adding the directory to your bash profile:
